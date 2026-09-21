@@ -2,7 +2,9 @@
 
 A four-page, responsive physician recruitment website built with semantic HTML, reusable CSS, and vanilla JavaScript. No framework, application backend, or build step is needed.
 
-Live preview: https://ahmadfaraj4000-gif.github.io/amanah/
+Live website: https://reimage-demo.github.io/amanah/
+
+Repository: https://github.com/reimage-demo/amanah
 
 ## Local preview
 
@@ -91,4 +93,4 @@ A future approved provider can listen to `document.addEventListener('amanah:anal
 
 ## Assets and external dependencies
 
-Logo and three leadership photographs are stored locally, sourced from Amanah's current public website for this authorized rebuild. Source details and facts for review are in `CLIENT-HANDOFF.md`. CSS currently loads DM Sans and Manrope from Google Fonts; system sans-serif fallbacks keep the content available if blocked. Google Fonts is an external font request, not an analytics integration. Self-hosting licensed font files is an optional privacy/performance improvement.
+Logo and three leadership photographs are stored locally, sourced from Amanah's current public website for this authorized rebuild. Source details and facts for review are in `CLIENT-HANDOFF.md`. CSS currently loads DM Sans from Google Fonts and uses the system Georgia serif for headings; system sans-serif fallbacks keep the content available if blocked. Google Fonts is an external font request, not an analytics integration. Self-hosting licensed font files is an optional privacy/performance improvement.

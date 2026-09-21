@@ -4,7 +4,7 @@ Date: September 21, 2026.
 
 ## Automated checks
 
-`NODE_PATH=/tmp/amanah-test/node_modules node tests/verify.cjs`: **213 checks passed** after final formatting.
+`NODE_PATH=/tmp/amanah-test/node_modules node tests/verify.cjs`: **209 checks passed** after final formatting.
 
 Covered all four pages, unique titles/descriptions, one H1 per page, local links, section anchors, physician/hospital CTA destinations, asset existence, named/labeled controls, disabled unconfigured forms, required-field/email validation, missing endpoint safety, separate endpoint routing, duplicate request suppression, pending state, server errors, network errors, input preservation, retry, rejection of unconfirmed success responses, confirmed success, focus placement, once-only events, and no personal information in analytics payloads.
 
@@ -28,3 +28,13 @@ Used the requested browser skill to inspect the existing organization site and t
 ## Limits
 
 No real inbox submission, email, call, credential verification, or clinical participation was performed. Formspree delivery, configured notification recipients, and CAPTCHA integration remain untested until real client configuration and authorized test submission. The client must approve final facts and privacy language. The existing live website was not changed.
+
+## Editorial redesign review
+
+Following the revised brief, removed the hero demonstration panel, numbered steps, decorative CTA icons, excessive eyebrow labels, repeated cards, gradients, and shadows. Replaced them with a text-led hero, prose explanation, separated contribution rows, navy rectangular buttons, compact portraits, and serif headings. Reviewed all four revised pages at 390px and 1440px, and checked overflow at 320px and 768px. Reviewed mobile leadership and mobile/desktop inquiry sections. Retested navigation and the physician anchor beneath the sticky header. The final automated suite passed 209 checks; the count decreased because unused asset references and repeated CTA links were removed. Endpoint configuration and form JavaScript are unchanged.
+
+The initial GitHub Pages deployment completed successfully. The editorial redesign remains local only and was not pushed or deployed, per the subsequent instruction.
+
+## Reimage deployment
+
+The latest revision, including the transparent logo, was authorized for deployment to reimage-demo/amanah. All 213 current automated checks passed before publishing. Social metadata now uses the reimage GitHub Pages address. Formspree IDs remain unconfigured; no real submissions were sent.

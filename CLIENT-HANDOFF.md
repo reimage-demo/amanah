@@ -6,7 +6,7 @@ Prepared September 21, 2026.
 
 Replaced a long, mixed-purpose homepage with four focused static pages. The primary journey is a physician expression of interest; a separate hospital page and form support institutional inquiries. The homepage explains the proposed partnership chain, three contribution paths, participation steps, leadership, and practical questions.
 
-Retained navy branding and the existing logo; added a restrained teal action color, clear typography, generous spacing, consistent portraits, an HTML/CSS partnership diagram, mobile navigation, keyboard focus, and reduced-motion support. No fabricated hospital imagery, testimonials, operating results, or endorsements are used.
+The revised editorial design retains navy branding and the existing logo, with serif headings, readable body typography, restrained green links, simple rules, compact portraits, mobile navigation, keyboard focus, and reduced-motion support. The hero is text-led; the proposed model is explained in prose. Numbered sequences, icon-decorated buttons, floating panels, repeated cards, and decorative backgrounds were removed. No fabricated hospital imagery, testimonials, operating results, or endorsements are used.
 
 The copy treats the initiative as developing. It omits unverified telehealth functionality, coverage targets, response promises, tax status, and clinical arrangements. An interest form is explicitly not membership, credentialing, or permission to provide care.
 
@@ -56,6 +56,10 @@ The client should record qualified applicants, completed onboarding, and active 
 
 ## Hosting and optional improvements
 
-Published independently on GitHub Pages under the signed-in account. No change is made to the existing website, DNS, or Wix configuration. Do not move the production domain without separate authorization.
+The latest editorial redesign and transparent logo are published to the reimage-demo account at https://reimage-demo.github.io/amanah/, following the subsequent deployment request. No change is made to the existing website, DNS, or Wix configuration. Do not move the production domain without separate authorization.
 
 Optional later work: licensed self-hosted fonts, a client-approved analytics provider, translation/localization, a fuller privacy policy, additional verified leadership profiles, and verified partner stories once available. These are not prerequisites to reviewing the rebuilt site.
+
+## Transparent logo update
+
+`assets/images/amanah-logo-transparent.png` is the transparent navy version used by the header, footer, and favicon. The original JPEG remains available as a reference. Produced with the built-in image editing tool from that original; prompt: extract the existing calligraphy, circular outline, and AMANAH wordmark, remove the navy background and shadows, recolor foreground to the source background navy (approximately #1c2474), preserve letterforms/proportions, and output a transparent PNG. PNG alpha and desktop/mobile rendering were checked locally. This update is included in the reimage-demo deployment.
