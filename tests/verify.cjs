@@ -2,7 +2,7 @@
 const { JSDOM } = require("jsdom");
 const fs = require("node:fs");
 const assert = require("node:assert/strict");
-const pages = ["index", "physicians", "partners", "about"];
+const pages = ["index", "physicians", "partners", "about", "members", "privacy", "terms", "legal", "cookies", "accessibility"];
 const docs = Object.fromEntries(
   pages.map((p) => [
     p,

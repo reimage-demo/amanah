@@ -91,3 +91,12 @@ test("failed submission retains answers and retry uses the same idempotency key"
     JSON.parse(f.w.fetch.mock.calls[1][1].body).submissionKey,
   );
 });
+test.each(["no", "yes"])("directory choice %s is explicit and preserved in the submission", async (choice) => {
+  const f=fixture();
+  const input=f.form.querySelector('[name="public_directory"]');
+  expect(input.value).toBe('no');
+  f.fill(); input.value=choice; f.next(); f.next(); f.submit();
+  await vi.waitFor(()=>expect(f.form.querySelector('.join-welcome')).not.toBeNull());
+  expect(JSON.parse(f.w.fetch.mock.calls[0][1].body).answers.public_directory).toBe(choice);
+  expect(f.form.querySelector('.join-welcome a').getAttribute('href')).toBe(choice==='yes'?'members.html':'about.html');
+});

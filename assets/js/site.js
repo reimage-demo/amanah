@@ -142,7 +142,7 @@
           const dt = document.createElement("dt");
           dt.textContent = input.labels[0].textContent.replace("*", "").trim();
           const dd = document.createElement("dd");
-          dd.textContent = input.value || "Not provided";
+          dd.textContent = input.name === "public_directory" ? (input.value === "yes" ? "Yes, publish my name" : "Keep my name private") : input.value || "Not provided";
           row.append(dt, dd);
           dl.append(row);
         }
@@ -228,9 +228,9 @@
         closing.className = "welcome-signature";
         closing.textContent = "With gratitude, The Amanah team";
         const link = document.createElement("a");
-        link.href = "about.html";
+        link.href = answers.public_directory === "yes" && kind === "physician" ? "members.html" : "about.html";
         link.className = "button button-outline";
-        link.textContent = "Explore our shared purpose →";
+        link.textContent = answers.public_directory === "yes" && kind === "physician" ? "Meet the movement →" : "Explore our shared purpose →";
         welcome.append(mark, eyebrow, title, message, note, closing, link);
         form.append(welcome);
         welcome.focus();
