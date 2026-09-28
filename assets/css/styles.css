@@ -208,6 +208,15 @@ nav .button {
 }
 .hero-copy {
   max-width: 850px;
+  margin-inline: auto;
+  text-align: center;
+}
+.hero h1,
+.hero .lead {
+  margin-inline: auto;
+}
+.hero .actions {
+  justify-content: center;
 }
 .hero-audience {
   font-size: 13px;
