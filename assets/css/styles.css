@@ -1449,11 +1449,11 @@ form[data-inquiry] {
   }
 }
 
-/* Balance the logo with equal side columns so navigation is page-centered. */
+/* Keep the logo left and the navigation actions at the right edge. */
 @media (min-width: 851px) {
   .header-inner {
     display: grid;
-    grid-template-columns: minmax(100px, 1fr) auto minmax(100px, 1fr);
+    grid-template-columns: minmax(100px, 1fr) auto;
     gap: 16px;
   }
   .header-inner > .brand {
@@ -1462,8 +1462,8 @@ form[data-inquiry] {
   }
   .header-inner > nav {
     grid-column: 2;
-    justify-self: center;
-    justify-content: center;
+    justify-self: end;
+    justify-content: flex-end;
   }
 }
 @media (max-width: 850px) {
@@ -1593,6 +1593,20 @@ form[data-inquiry] {
   font-weight: 600;
 }
 .site-header nav .nav-join:hover { background: #fff; color: #191b43; }
+.site-header nav .nav-call {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  color: #191b43;
+  font-weight: 600;
+}
+.site-header nav .nav-call:hover {
+  background: #e8eaf2;
+  color: #191b43;
+}
+
 .hero, .page-hero { text-align: center; }
 .hero h1, .page-hero h1, .hero .lead, .page-hero .lead { margin-inline: auto; }
 .page-hero h1 { max-width: 880px; }
