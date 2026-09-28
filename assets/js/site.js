@@ -208,6 +208,7 @@
         welcome.tabIndex = -1;
         const first = (answers.full_name || answers.contact_name)
           .trim()
+          .replace(/^(?:dr\.?|doctor)\s+/i, "")
           .split(/\s+/)[0];
         const eyebrow = document.createElement("span");
         eyebrow.className = "eyebrow";

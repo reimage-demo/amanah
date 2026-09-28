@@ -51,6 +51,7 @@ test.each(["physician", "hospital"])(
   async (kind) => {
     const f = fixture(kind);
     f.fill();
+    if (kind === "physician") f.form.querySelector("[name=full_name]").value = "Dr. QA Test";
     f.next();
     f.next();
     const count = f.form.querySelectorAll(
