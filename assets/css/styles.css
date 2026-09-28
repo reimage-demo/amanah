@@ -1420,3 +1420,27 @@ form[data-inquiry] {
     max-width: none;
   }
 }
+
+/* Balance the logo with equal side columns so navigation is page-centered. */
+@media (min-width: 851px) {
+  .header-inner {
+    display: grid;
+    grid-template-columns: minmax(100px, 1fr) auto minmax(100px, 1fr);
+    gap: 16px;
+  }
+  .header-inner > .brand {
+    grid-column: 1;
+    justify-self: start;
+  }
+  .header-inner > nav {
+    grid-column: 2;
+    justify-self: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 850px) {
+  .site-header nav[data-enhanced].is-open {
+    align-items: center;
+    text-align: center;
+  }
+}
