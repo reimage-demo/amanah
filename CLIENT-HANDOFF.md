@@ -23,7 +23,7 @@ The existing https://www.amanahmedicalcare.com/ was inspected directly in the br
 - Nabil portrait: Wix media `89f82a_0029e0bf1a984da3a31555e26e4c60dc~mv2.jpg`.
 - Toufik portrait: Wix media `89f82a_29697627937642759f355b7cd025d32f~mv2.jpg`.
 
-Assets were reused from the existing organization website within the requested rebuild. Leadership images were resized for web use; the favicon derives from the existing logo. Portraits were not generated. The remaining founding physician profiles were omitted to keep the preview concise and avoid placeholder portraits and time-sensitive fellowship claims. Full leadership source URLs use `https://static.wixstatic.com/media/` followed by the media identifier above.
+Assets were reused from the existing organization website within the requested rebuild. Leadership images were resized for web use; the favicon derives from the existing logo. Portraits were not generated. The September 28 update restores all four founding physician profiles and full biographies/training for the three leaders, as requested. The existing source site supplies portraits for Waleed Rehman and Mohamed Rahman and silhouette placeholders for Ahmad Allaham and Saba Anwar. Full leadership source URLs use `https://static.wixstatic.com/media/` followed by the media identifier above.
 
 ## Facts needing client confirmation
 
@@ -61,3 +61,15 @@ Optional later work: licensed self-hosted fonts, a client-approved analytics pro
 ## Separate admin repository
 
 The portal and Convex backend source now live in https://github.com/reimage-demo/amanah-admin under Reimage. This public repository retains only an old-link redirect at `/admin/`. Each repository has independent GitHub Pages settings and its own custom-domain input. Database, collected records, and admin credentials are unchanged.
+
+## Client palette and complete physician profiles — September 28, 2026
+
+Public pages now use consultation-banner deep blue (`#191b43`) and white, with pale blue supporting surfaces. The former cream, green, and gold brand accents are replaced throughout the public site, including form progress and welcome states.
+
+All seven published physician profiles appear on the homepage with full-story links. About includes each complete biography and all published training details. Source checked: https://www.amanahmedicalcare.com/ on September 28, 2026. Typographical errors were corrected without adding qualifications or employment claims.
+
+Additional source images at `https://static.wixstatic.com/media/`:
+- Waleed Rehman: `89f82a_a28fe19dd387449e834f2069f78c26e1~mv2.jpg`
+- Mohamed Rahman: `89f82a_b72706b882974342825c67d8d9114a2b~mv2.jpg`
+- Ahmad Allaham (source placeholder): `89f82a_82712e6353af4df4aed4d5e7dd03837e~mv2.jpg`
+- Saba Anwar (source placeholder): `89f82a_40cfd7488fc043eba457a1f0b3666c40~mv2.jpg`

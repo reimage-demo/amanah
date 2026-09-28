@@ -16,3 +16,10 @@ The database and authentication use Convex exclusively. The frontend is hosted t
 ## Repository split — September 28, 2026
 
 Admin application, Convex source, and backend tests moved to `reimage-demo/amanah-admin`. The public repository retains public pages and public form tests. Old `/admin/` links redirect to the independent portal. The login now uses one centered logo and sign-in card.
+
+## Blue/white palette and biographies — September 28, 2026
+
+- All four public pages, public form stages, and welcome states updated to the consultation reference’s navy/white palette.
+- Seven homepage profiles link to seven complete About biographies, including medical school, residency, and additional training as published.
+- Original portraits/placeholders load successfully. Full profiles and training sections verified in the browser.
+- Four public form tests and 124 static page checks passed; production Vite build passed.
