@@ -1,6 +1,4 @@
-/* The only Formspree configuration location. Use two distinct real form IDs.
-   Leave empty until the client has configured and verified each recipient. */
+/* Public HTTP endpoint only. Credentials live exclusively in Convex Auth. */
 window.AMANAH_CONFIG = Object.freeze({
-  physicianFormId: "",
-  hospitalFormId: "",
+  convexSiteUrl: "https://fast-roadrunner-39.convex.site",
 });

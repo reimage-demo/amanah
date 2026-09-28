@@ -1,40 +1,14 @@
-# Verification record
+# Amanah verification — September 27, 2026
 
-Date: September 21, 2026.
+- Production Convex project: `re-image-business-solutions/amanah`.
+- Production deployment: `fast-roadrunner-39`.
+- Convex schema/functions/auth deployment passed TypeScript checks.
+- Requested administrator created; browser login succeeded. Temporary bootstrap password removed from Convex environment after account provisioning.
+- 10 automated tests passed: field validation/preservation, all physician and hospital fields, duplicate protection, anonymous and non-admin access denial, admin updates/notes, rate limits, form step validation, confirmed-success welcome, and retry preservation.
+- 108 static link/anchor/label/asset checks passed.
+- Vite production build passed. Public-page classic scripts are intentionally copied unchanged; Vite emits informational non-module bundling warnings for them.
+- Production end-to-end smoke test: completed physician form using `QA Amanah Test` / `amanah-qa@example.invalid`; verified personalized welcome, immediate appearance in Signees, all eight field values, saved Contacted status, and saved team note. No email was sent. Synthetic record and note were removed afterward; cleanup function removed from deployed code.
+- Desktop login, dashboard, signee list/detail, and welcome screens inspected in the browser.
+- Mobile welcome and admin portal layouts checked at 390px with no horizontal overflow.
 
-## Automated checks
-
-`NODE_PATH=/tmp/amanah-test/node_modules node tests/verify.cjs`: **209 checks passed** after final formatting.
-
-Covered all four pages, unique titles/descriptions, one H1 per page, local links, section anchors, physician/hospital CTA destinations, asset existence, named/labeled controls, disabled unconfigured forms, required-field/email validation, missing endpoint safety, separate endpoint routing, duplicate request suppression, pending state, server errors, network errors, input preservation, retry, rejection of unconfirmed success responses, confirmed success, focus placement, once-only events, and no personal information in analytics payloads.
-
-JavaScript syntax checks passed. Mock requests used synthetic data and did not contact Formspree.
-
-## Browser checks
-
-Used the requested browser skill to inspect the existing organization site and the rebuilt local site.
-
-- All four pages visually inspected at 390px mobile and 1440px desktop widths.
-- All four pages additionally checked at 320px narrow-phone and 768px tablet widths. `document.documentElement.scrollWidth` equaled `innerWidth` on every page at all tested sizes.
-- Desktop navigation and mobile menu; correct expanded state, Escape closes the menu, focus returns to the toggle, and links navigate to their intended pages.
-- Physician and hospital CTA anchors position their sections beneath the sticky header.
-- Missing-endpoint forms visibly unavailable, disabled, with a working mailto contact alternative.
-- Local browser QA server: native required-field validation blocked an empty physician form with zero requests; mocked server and network errors preserved input; retry succeeded; pending submit button disabled; confirmed success focused the status and disabled the sent form.
-- Separate hospital form completed a mocked success flow.
-- Source leadership images load locally; portrait proportions adjusted after visual review to avoid excessive cropping.
-- No browser console warnings/errors observed during the local review.
-- Native FAQ disclosures and real HTML navigation provide progressive enhancement. Static DOM checks confirm navigation/content exist without JavaScript; no-JavaScript real form delivery is intentionally unavailable and has an email fallback.
-
-## Limits
-
-No real inbox submission, email, call, credential verification, or clinical participation was performed. Formspree delivery, configured notification recipients, and CAPTCHA integration remain untested until real client configuration and authorized test submission. The client must approve final facts and privacy language. The existing live website was not changed.
-
-## Editorial redesign review
-
-Following the revised brief, removed the hero demonstration panel, numbered steps, decorative CTA icons, excessive eyebrow labels, repeated cards, gradients, and shadows. Replaced them with a text-led hero, prose explanation, separated contribution rows, navy rectangular buttons, compact portraits, and serif headings. Reviewed all four revised pages at 390px and 1440px, and checked overflow at 320px and 768px. Reviewed mobile leadership and mobile/desktop inquiry sections. Retested navigation and the physician anchor beneath the sticky header. The final automated suite passed 209 checks; the count decreased because unused asset references and repeated CTA links were removed. Endpoint configuration and form JavaScript are unchanged.
-
-The initial GitHub Pages deployment completed successfully. The editorial redesign remains local only and was not pushed or deployed, per the subsequent instruction.
-
-## Reimage deployment
-
-The latest revision, including the transparent logo, was authorized for deployment to reimage-demo/amanah. All 213 current automated checks passed before publishing. Social metadata now uses the reimage GitHub Pages address. Formspree IDs remain unconfigured; no real submissions were sent.
+The database and authentication use Convex exclusively. The frontend is hosted through the existing GitHub Pages preview site, built with Vite. Automated email notifications are not part of this implementation.

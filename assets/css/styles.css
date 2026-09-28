@@ -1033,3 +1033,152 @@ button:disabled {
     height: 61px;
   }
 }
+/* A deliberate, three-step introduction to the movement. */
+[hidden] {
+  display: none !important;
+}
+form[data-inquiry] {
+  border: 1px solid #e1e2d8;
+  border-radius: 12px;
+  padding: 38px;
+  background: #fff;
+  box-shadow: 0 18px 65px #17294307;
+}
+.join-progress {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 34px;
+  border-bottom: 1px solid #e8e7df;
+  padding-bottom: 20px;
+}
+.join-progress span {
+  font-size: 10px;
+  color: #929b94;
+  letter-spacing: 1px;
+}
+.join-progress b {
+  font-weight: 500;
+  display: block;
+  letter-spacing: 0;
+  margin-top: 5px;
+  font-size: 11px;
+}
+.join-progress .current {
+  color: #286258;
+}
+.join-progress .current b {
+  font-weight: 700;
+}
+.join-progress .complete {
+  color: #9a8058;
+}
+.join-step-intro h3 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.3;
+}
+.join-step-intro p {
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+.join-step-intro:focus,
+.join-welcome:focus {
+  outline: none;
+}
+.join-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  margin: 25px 0 18px;
+}
+.join-navigation > .button {
+  margin-left: auto;
+}
+.join-back {
+  border: 0;
+  background: none;
+  color: #6a776f;
+  cursor: pointer;
+  padding: 12px 0;
+  font-size: 13px;
+}
+.join-review dl {
+  margin: 0;
+}
+.join-review dl > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #eeeee6;
+  padding: 12px 0;
+  gap: 15px;
+  font-size: 13px;
+}
+.join-review dt {
+  color: #768176;
+}
+.join-review dd {
+  margin: 0;
+  color: #172943;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.join-welcome {
+  text-align: center;
+  padding: 18px 0;
+}
+.welcome-mark {
+  color: #b59869;
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+.join-welcome .eyebrow {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #9a8058;
+}
+.join-welcome h2 {
+  font-size: 37px;
+  margin: 22px 0;
+}
+.join-welcome > p {
+  font-size: 15px;
+}
+.join-welcome .welcome-next {
+  font-size: 13px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5dc;
+  margin-top: 25px;
+}
+.join-welcome .welcome-signature {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: #286258;
+  font-size: 17px;
+  margin: 25px 0;
+}
+.join-welcome .button {
+  font-size: 12px;
+}
+@media (max-width: 600px) {
+  form[data-inquiry] {
+    padding: 25px 20px;
+  }
+  .join-progress {
+    gap: 8px;
+  }
+  .join-progress b {
+    font-size: 10px;
+  }
+  .join-step-intro h3 {
+    font-size: 24px;
+  }
+  .join-welcome h2 {
+    font-size: 31px;
+  }
+  .join-review dl > div {
+    font-size: 12px;
+  }
+}

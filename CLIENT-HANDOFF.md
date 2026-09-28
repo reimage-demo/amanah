@@ -36,23 +36,17 @@ Assets were reused from the existing organization website within the requested r
 - Confirm legal organizational identity and any approved nonprofit/tax status claims before adding them. The rebuild makes no tax-exempt claim.
 - Approve the inquiry data-use language; determine internal access, retention, deletion, and privacy request practices. No unsupported retention or security promises were added.
 
-## Launch requirements
+## Recruitment backend and administration
 
-The GitHub Pages preview can be reviewed immediately. Before launching online recruitment collection:
+The September 27 update replaces the former form provider with Convex for all submissions, authentication, and private administration. Both forms are enabled. The Vite portal at `/admin/` has Signees and Partnerships tabs, complete responses, status tracking, and internal notes. The requested administrator account is provisioned in production; credentials are not included in this document.
 
-1. Supply two distinct Formspree IDs in `assets/js/config.js`.
-2. Configure/verify separate recipient workflows and spam protection in an Amanah-owned Formspree account.
-3. Name a physician recruitment follow-up owner and a hospital partnership follow-up owner; confirm access and escalation arrangements. These roles are not yet assigned.
-4. Approve the content facts and privacy language listed above.
-5. Authorize and complete the real end-to-end test procedure in README. Local mocks do not prove notification delivery.
-
-Until configuration is complete, both forms are disabled and the verified public contact email is offered. The website never displays a fabricated success message.
+Assign a physician follow-up owner and partnership follow-up owner to monitor the portal. Notifications are not sent automatically. Continue reviewing organizational content and inquiry data-use practices as listed above.
 
 ## Follow-up and measurement
 
 The physician owner should review specialty, location, interest, and availability, then arrange the appropriate eligibility/onboarding process. The hospital owner should discuss institutional needs, collaboration expectations, responsibilities, and fees. No response-time commitment is stated.
 
-The client should record qualified applicants, completed onboarding, and active volunteers in its own follow-up system. The site includes anonymous event hooks but no installed tracker or applicant database.
+Use the private Convex-backed portal to track conversations and onboarding. The public site retains anonymous event hooks with no installed analytics tracker.
 
 ## Hosting and optional improvements
 

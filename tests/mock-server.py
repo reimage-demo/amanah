@@ -4,7 +4,7 @@ from pathlib import Path
 import os
 os.chdir(Path(__file__).resolve().parent.parent)
 mock='''<script>
-window.AMANAH_CONFIG={physicianFormId:'testphys',hospitalFormId:'testhosp'};
+window.AMANAH_CONFIG={convexSiteUrl:'https://test-amanah.convex.site'};
 let requestCount=0;
 window.fetch=async()=>{document.getElementById('qa-count').textContent=String(++requestCount);const mode=document.getElementById('qa-response').value;await new Promise(r=>setTimeout(r,900));if(mode==='network')throw new TypeError('Mock network failure');return {ok:mode==='success',json:async()=>({ok:mode==='success'})};};
 window.addEventListener('DOMContentLoaded',()=>{const qa=document.createElement('aside');qa.style='position:fixed;bottom:0;right:0;background:#fff;border:2px solid #17685f;padding:8px;z-index:99;font-size:12px';qa.innerHTML='<label for="qa-response">Mock response</label><select id="qa-response"><option value="success">Success</option><option value="error">Server error</option><option value="network">Network error</option></select><span>Mock requests: <b id="qa-count">0</b></span>';document.body.append(qa);});
