@@ -107,16 +107,16 @@
       });
       const copy = [
         [
-          "Every story has a beginning.",
-          "Tell us a little about the person behind the purpose.",
+          "Your details",
+          "Enter your contact and professional details.",
         ],
         [
-          "A gift only you can bring.",
-          "Help us understand where your experience and our mission meet.",
+          "Your interests",
+          "Tell us how you would like to contribute. Optional fields can be left blank.",
         ],
         [
-          "A meaningful first step.",
-          "Take a moment to review your details. This is the beginning of a conversation.",
+          "Review and submit",
+          "Check your answers, then submit. Use Back to make changes.",
         ],
       ][step];
       intro.replaceChildren();

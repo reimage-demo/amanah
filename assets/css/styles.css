@@ -1631,3 +1631,39 @@ form[data-inquiry] {
 @media (max-width: 700px) {
   .care-photo img, .contribution-intro .care-photo img { height: 280px; }
 }
+
+/* Homepage story, faith and long-term aspirations. */
+.story-opening { text-align: center; }
+.story-opening .lead { margin-inline: auto; }
+.story-photo { width: min(880px, calc(100% - 40px)); margin-top: 36px; }
+.ayah-section, .aspirations { background: var(--navy); color: #fff; text-align: center; padding-block: 72px; }
+.ayah-section h2, .ayah-section p, .ayah-section a, .aspirations h2, .aspirations p, .aspirations .section-eyebrow { color: #fff; }
+.ayah-section blockquote { max-width: 900px; margin: 32px auto; }
+.ayah-arabic { font-family: "Geeza Pro", "Noto Naskh Arabic", "Traditional Arabic", serif; font-size: clamp(25px, 3vw, 36px); line-height: 2.1; }
+.ayah-translation { font-family: Georgia, serif; font-size: 20px; line-height: 1.8; max-width: 790px; margin: 28px auto 0; }
+.ayah-source { font-size: 14px; }
+.ayah-source span { display: block; font-size: 12px; margin-top: 8px; }
+.aspiration-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 42px 28px; margin: 48px 0; }
+.aspiration-grid > div { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.aspiration-grid dd { order: -1; margin: 0; font-family: Georgia, serif; font-size: clamp(40px, 5vw, 64px); line-height: 1.1; }
+.aspiration-grid dt { font-size: 15px; line-height: 1.6; max-width: 210px; }
+.aspiration-note { max-width: 760px; margin-inline: auto; font-size: 13px; line-height: 1.7; }
+.final-cta > .container { flex-direction: column; text-align: center; gap: 24px; }
+.final-cta p { max-width: 640px; margin-inline: auto; }
+/* One centered column gives every field the same dimensions on every step. */
+.form-layout form { max-width: 640px; margin-inline: auto; }
+.form-grid { grid-template-columns: minmax(0,1fr); max-width: 520px; margin-inline: auto; gap: 20px; }
+.form-grid .field { grid-column: 1; width: 100%; }
+.form-grid input, .form-grid select, .form-grid textarea { box-sizing: border-box; width: 100%; height: 52px; min-height: 52px; padding: 12px 14px; line-height: 26px; font-size: 16px; }
+.form-grid textarea { resize: vertical; }
+.form-grid .field label, .field-help, .required-note, .join-step-intro, .data-notice, form .microcopy { text-align: center; }
+.join-step-intro { max-width: 520px; margin-inline: auto; }
+.join-navigation { justify-content: center; }
+.join-navigation > .button { margin-left: 0; }
+.join-progress { max-width: 520px; margin-inline: auto; }
+.join-review { max-width: 520px; margin-inline: auto; }
+@media (max-width: 700px) {
+  .aspiration-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 32px 18px; }
+  .ayah-section, .aspirations { padding-block: 46px; }
+  .ayah-translation { font-size: 18px; }
+}

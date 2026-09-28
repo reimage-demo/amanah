@@ -42,7 +42,7 @@ test("required answers prevent progression", () => {
   const f = fixture();
   f.next();
   expect(f.form.querySelector(".join-step-intro").textContent).toContain(
-    "Every story",
+    "Your details",
   );
   expect(f.w.fetch).not.toHaveBeenCalled();
 });
