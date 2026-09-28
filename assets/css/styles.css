@@ -1444,3 +1444,75 @@ form[data-inquiry] {
     text-align: center;
   }
 }
+
+/* Keep each contribution's title and explanation in one reading column. */
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+.section-heading > p { max-width: 680px; font-size: 17px; line-height: 1.7; }
+.section-heading > div { max-width: 760px; }
+.contribution-rows {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  border: 0;
+  counter-reset: contribution;
+}
+.contribution-row {
+  display: block;
+  padding: 28px;
+  background: var(--white, #fff);
+  border: 1px solid #dce0ef;
+  border-top: 3px solid var(--navy);
+  counter-increment: contribution;
+}
+.contribution-row::before {
+  content: "0" counter(contribution);
+  display: block;
+  color: #515777;
+  font-size: 13px;
+  letter-spacing: .12em;
+  margin-bottom: 24px;
+}
+.contribution-row h3 { font-size: 27px; line-height: 1.2; margin: 0 0 18px; }
+.contribution-row p { font-size: 16px; line-height: 1.75; margin: 0 0 16px; }
+.contribution-row p:last-child { margin-bottom: 0; }
+.care-story, .contribution-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+.care-story-copy h2, .contribution-intro h2 { font-size: clamp(30px, 3vw, 42px); line-height: 1.15; margin: 0 0 22px; }
+.care-story-copy .eyebrow, .contribution-intro .eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+.care-photo { margin: 0; min-width: 0; }
+.care-photo img { display: block; width: 100%; height: 420px; object-fit: cover; }
+.care-photo figcaption { font-size: 11px; line-height: 1.5; color: #515777; margin-top: 10px; }
+.contribution-intro { margin-bottom: 48px; }
+.contribution-intro .section-heading { margin: 0; gap: 0; }
+.contribution-intro .section-heading > p { margin: 0 0 20px; }
+.contribution-intro .section-heading .contribution-note { font-size: 14px; margin: 0; }
+.contribution-intro .care-photo img { height: 360px; object-position: center 10%; }
+@media (max-width: 1000px) {
+  .care-story, .contribution-intro { gap: 32px; }
+  .contribution-rows { gap: 16px; }
+  .contribution-row { padding: 22px; }
+  .contribution-row h3 { font-size: 24px; }
+}
+@media (max-width: 700px) {
+  .care-story, .contribution-intro, .contribution-rows { grid-template-columns: 1fr; }
+  .care-story-copy { grid-row: 1; }
+  .care-photo img, .contribution-intro .care-photo img { height: 280px; }
+  .contribution-row { padding: 26px; }
+  .contribution-row::before { margin-bottom: 16px; }
+}
