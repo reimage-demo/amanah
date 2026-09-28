@@ -1453,7 +1453,6 @@ form[data-inquiry] {
 @media (min-width: 851px) {
   .header-inner {
     display: grid;
-    position: relative;
     grid-template-columns: minmax(100px, 1fr) auto minmax(100px, 1fr);
     gap: 16px;
   }
@@ -1468,7 +1467,7 @@ form[data-inquiry] {
   }
   .site-header nav .nav-call {
     position: absolute;
-    right: 0;
+    right: 24px;
     top: 50%;
     transform: translateY(-50%);
   }
