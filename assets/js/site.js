@@ -66,7 +66,7 @@
     const progress = document.createElement("div");
     progress.className = "join-progress";
     progress.innerHTML =
-      "<span>01 <b>Your story</b></span><span>02 <b>Your purpose</b></span><span>03 <b>Your first step</b></span>";
+      "<span><b>Your details</b></span><span><b>Your interests</b></span><span><b>Review</b></span>";
     fieldset.prepend(progress);
     const intro = document.createElement("div");
     intro.className = "join-step-intro";

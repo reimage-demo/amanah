@@ -1488,7 +1488,6 @@ form[data-inquiry] {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   border: 0;
-  counter-reset: contribution;
 }
 .contribution-row {
   display: block;
@@ -1496,16 +1495,8 @@ form[data-inquiry] {
   background: var(--white, #fff);
   border: 1px solid #dce0ef;
   border-top: 3px solid var(--navy);
-  counter-increment: contribution;
 }
-.contribution-row::before {
-  content: "0" counter(contribution);
-  display: block;
-  color: #515777;
-  font-size: 13px;
-  letter-spacing: .12em;
-  margin-bottom: 24px;
-}
+
 .contribution-row h3 { font-size: 27px; line-height: 1.2; margin: 0 0 18px; }
 .contribution-row p { font-size: 16px; line-height: 1.75; margin: 0 0 16px; }
 .contribution-row p:last-child { margin-bottom: 0; }
@@ -1542,7 +1533,7 @@ form[data-inquiry] {
   .care-story-copy { grid-row: 1; }
   .care-photo img, .contribution-intro .care-photo img { height: 280px; }
   .contribution-row { padding: 26px; }
-  .contribution-row::before { margin-bottom: 16px; }
+
 }
 
 /* Navigation links share one visual weight, including the invitation. */
@@ -1581,4 +1572,62 @@ form[data-inquiry] {
 @media (min-width: 851px) and (max-width: 1100px) {
   .header-inner { grid-template-columns: 90px minmax(0,1fr); gap: 18px; }
   .site-header nav { gap: 16px; font-size: 12px; }
+}
+
+/* A centered public layout with a compact, distinct navigation invitation. */
+.site-header nav > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 34px;
+  line-height: 1.2;
+}
+.site-header nav .nav-join {
+  display: inline-flex;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #ffffffb3;
+  border-radius: 3px;
+  background: #ffffff0d;
+  font-weight: 600;
+}
+.site-header nav .nav-join:hover { background: #fff; color: #191b43; }
+.hero, .page-hero { text-align: center; }
+.hero h1, .page-hero h1, .hero .lead, .page-hero .lead { margin-inline: auto; }
+.page-hero h1 { max-width: 880px; }
+.page-hero .lead { max-width: 740px; }
+.section-heading { align-items: center; text-align: center; }
+.section-heading > div, .section-heading > p { margin-inline: auto; }
+.section > .container > h2, .section-link { text-align: center; }
+.editorial-split, .split {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 780px;
+  gap: 20px;
+  text-align: center;
+}
+.editorial-split h2 { max-width: none; }
+.care-story, .contribution-intro {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.care-story-copy { grid-row: 1; }
+.care-story-copy, .contribution-intro .section-heading { max-width: 740px; margin-inline: auto; }
+.care-photo { width: 100%; max-width: 880px; margin-inline: auto; }
+.care-photo img { height: 420px; }
+.contribution-intro .care-photo { max-width: 680px; }
+.contribution-intro .care-photo img { height: 380px; object-position: center 10%; }
+.contribution-row { text-align: center; }
+.form-layout { grid-template-columns: minmax(0,1fr); max-width: 760px; gap: 32px; }
+.form-intro { text-align: center; }
+.form-layout form { text-align: left; width: 100%; box-sizing: border-box; }
+.join-progress { justify-content: space-around; text-align: center; }
+.join-progress b { margin-top: 0; }
+.member-directory, .member-invitation { text-align: center; }
+.directory-note { margin-inline: auto; }
+.policy-content > h2 { text-align: left; }
+.storage-notice { left: 50%; transform: translateX(-50%); text-align: center; }
+@media (max-width: 700px) {
+  .care-photo img, .contribution-intro .care-photo img { height: 280px; }
 }
