@@ -1,4 +1,4 @@
-name: Publish Amanah
+name: Publish Amanah public website
 on:
   push:
     branches: [main]

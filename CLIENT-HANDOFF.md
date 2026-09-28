@@ -38,7 +38,7 @@ Assets were reused from the existing organization website within the requested r
 
 ## Recruitment backend and administration
 
-The September 27 update replaces the former form provider with Convex for all submissions, authentication, and private administration. Both forms are enabled. The Vite portal at `/admin/` has Signees and Partnerships tabs, complete responses, status tracking, and internal notes. The requested administrator account is provisioned in production; credentials are not included in this document.
+The September 27 update replaces the former form provider with Convex for all submissions, authentication, and private administration. Both forms are enabled. The standalone Vite portal at `https://reimage-demo.github.io/amanah-admin/` has Signees and Partnerships tabs, complete responses, status tracking, and internal notes. The requested administrator account is provisioned in production; credentials are not included in this document.
 
 Assign a physician follow-up owner and partnership follow-up owner to monitor the portal. Notifications are not sent automatically. Continue reviewing organizational content and inquiry data-use practices as listed above.
 
@@ -57,3 +57,7 @@ Optional later work: licensed self-hosted fonts, a client-approved analytics pro
 ## Transparent logo update
 
 `assets/images/amanah-logo-transparent.png` is the transparent navy version used by the header, footer, and favicon. The original JPEG remains available as a reference. Produced with the built-in image editing tool from that original; prompt: extract the existing calligraphy, circular outline, and AMANAH wordmark, remove the navy background and shadows, recolor foreground to the source background navy (approximately #1c2474), preserve letterforms/proportions, and output a transparent PNG. PNG alpha and desktop/mobile rendering were checked locally. This update is included in the reimage-demo deployment.
+
+## Separate admin repository
+
+The portal and Convex backend source now live in https://github.com/reimage-demo/amanah-admin under Reimage. This public repository retains only an old-link redirect at `/admin/`. Each repository has independent GitHub Pages settings and its own custom-domain input. Database, collected records, and admin credentials are unchanged.

@@ -12,3 +12,7 @@
 - Mobile welcome and admin portal layouts checked at 390px with no horizontal overflow.
 
 The database and authentication use Convex exclusively. The frontend is hosted through the existing GitHub Pages preview site, built with Vite. Automated email notifications are not part of this implementation.
+
+## Repository split — September 28, 2026
+
+Admin application, Convex source, and backend tests moved to `reimage-demo/amanah-admin`. The public repository retains public pages and public form tests. Old `/admin/` links redirect to the independent portal. The login now uses one centered logo and sign-in card.

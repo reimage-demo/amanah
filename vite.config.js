@@ -1,11 +1,9 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 import { resolve } from "node:path";
 import { cpSync, mkdirSync } from "node:fs";
 export default defineConfig({
   base: "./",
   plugins: [
-    react(),
     {
       name: "copy-static-assets",
       closeBundle() {
