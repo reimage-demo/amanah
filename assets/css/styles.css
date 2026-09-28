@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
 :root {
-  --navy: #172943;
-  --ink: #26364a;
-  --muted: #536171;
-  --accent: #286258;
-  --paper: #f6f5f1;
-  --line: #d9dedb;
+  --navy: #191b43;
+  --ink: #242852;
+  --muted: #515777;
+  --accent: #202763;
+  --paper: #f5f6ff;
+  --line: #dce0f0;
 }
 * {
   box-sizing: border-box;
@@ -82,7 +82,7 @@ summary {
   -webkit-tap-highlight-color: transparent;
 }
 :focus-visible {
-  outline: 3px solid #ad6a22;
+  outline: 3px solid #526bc5;
   outline-offset: 4px;
 }
 img {
@@ -175,7 +175,7 @@ nav > a[aria-current="page"] {
   cursor: pointer;
 }
 .button:hover {
-  background: #2c415b;
+  background: #2b326d;
   color: #fff;
 }
 .button-outline {
@@ -283,14 +283,14 @@ nav .button {
   max-width: 580px;
 }
 .contribution-rows {
-  border-top: 1px solid #bdc8c1;
+  border-top: 1px solid #cdd3e8;
 }
 .contribution-row {
   display: grid;
   grid-template-columns: 0.8fr 1.3fr;
   gap: 85px;
   padding: 25px 0;
-  border-bottom: 1px solid #bdc8c1;
+  border-bottom: 1px solid #cdd3e8;
 }
 .contribution-row h3 {
   font-family: Georgia, serif;
@@ -308,7 +308,7 @@ nav .button {
 .section-link .button {
   background: transparent;
   color: var(--navy);
-  border-color: #a4b0aa;
+  border-color: #a4afcf;
 }
 .leadership-section {
   background: white;
@@ -572,7 +572,7 @@ select,
 textarea {
   width: 100%;
   min-height: 45px;
-  border: 1px solid #a5b1aa;
+  border: 1px solid #a4afcf;
   border-radius: 2px;
   padding: 10px 11px;
   background: #fff;
@@ -1038,23 +1038,23 @@ button:disabled {
   display: none !important;
 }
 form[data-inquiry] {
-  border: 1px solid #e1e2d8;
+  border: 1px solid #dce0f0;
   border-radius: 12px;
   padding: 38px;
   background: #fff;
-  box-shadow: 0 18px 65px #17294307;
+  box-shadow: 0 18px 65px #191b430a;
 }
 .join-progress {
   display: flex;
   justify-content: space-between;
   gap: 14px;
   margin-bottom: 34px;
-  border-bottom: 1px solid #e8e7df;
+  border-bottom: 1px solid #dce0f0;
   padding-bottom: 20px;
 }
 .join-progress span {
   font-size: 10px;
-  color: #929b94;
+  color: #626b8c;
   letter-spacing: 1px;
 }
 .join-progress b {
@@ -1065,13 +1065,13 @@ form[data-inquiry] {
   font-size: 11px;
 }
 .join-progress .current {
-  color: #286258;
+  color: #202763;
 }
 .join-progress .current b {
   font-weight: 700;
 }
 .join-progress .complete {
-  color: #9a8058;
+  color: #303c82;
 }
 .join-step-intro h3 {
   font-family: Georgia, serif;
@@ -1100,7 +1100,7 @@ form[data-inquiry] {
 .join-back {
   border: 0;
   background: none;
-  color: #6a776f;
+  color: #515777;
   cursor: pointer;
   padding: 12px 0;
   font-size: 13px;
@@ -1111,17 +1111,17 @@ form[data-inquiry] {
 .join-review dl > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid #eeeee6;
+  border-bottom: 1px solid #e5e8f5;
   padding: 12px 0;
   gap: 15px;
   font-size: 13px;
 }
 .join-review dt {
-  color: #768176;
+  color: #515777;
 }
 .join-review dd {
   margin: 0;
-  color: #172943;
+  color: #191b43;
   overflow-wrap: anywhere;
   white-space: pre-wrap;
 }
@@ -1130,14 +1130,14 @@ form[data-inquiry] {
   padding: 18px 0;
 }
 .welcome-mark {
-  color: #b59869;
+  color: #303c82;
   font-size: 42px;
   margin-bottom: 16px;
 }
 .join-welcome .eyebrow {
   font-size: 9px;
   letter-spacing: 2px;
-  color: #9a8058;
+  color: #303c82;
 }
 .join-welcome h2 {
   font-size: 37px;
@@ -1149,13 +1149,13 @@ form[data-inquiry] {
 .join-welcome .welcome-next {
   font-size: 13px;
   padding-top: 20px;
-  border-top: 1px solid #e5e5dc;
+  border-top: 1px solid #dce0f0;
   margin-top: 25px;
 }
 .join-welcome .welcome-signature {
   font-family: Georgia, serif;
   font-style: italic;
-  color: #286258;
+  color: #202763;
   font-size: 17px;
   margin: 25px 0;
 }
@@ -1180,5 +1180,234 @@ form[data-inquiry] {
   }
   .join-review dl > div {
     font-size: 12px;
+  }
+}
+
+/* Client palette: consultation-banner navy and white. */
+.site-header,
+.site-footer,
+.hero,
+.page-hero,
+.final-cta {
+  background: var(--navy);
+  color: #fff;
+}
+.site-header {
+  border-bottom-color: #ffffff26;
+}
+.site-header .brand img,
+.site-footer .footer-brand img {
+  filter: brightness(0) invert(1);
+}
+.site-header nav > a,
+.site-header nav > a:hover,
+.hero h1,
+.hero p,
+.hero a,
+.page-hero h1,
+.page-hero p,
+.final-cta h2,
+.final-cta p,
+.site-footer p,
+.site-footer a,
+.site-footer .footer-top > div:not(:first-child) > a,
+.site-footer .footer-label,
+.site-footer .footer-bottom,
+.site-footer .footer-bottom a {
+  color: #fff;
+}
+.hero .lead,
+.page-hero .lead {
+  color: #e1e5fa;
+}
+.hero .hero-audience {
+  color: #d1d9ff;
+}
+.hero .microcopy {
+  color: #d1d9ff;
+}
+.site-header .button,
+.hero .button,
+.page-hero .button,
+.final-cta .button {
+  background: #fff;
+  border-color: #fff;
+  color: var(--navy);
+}
+.site-header .button:hover,
+.hero .button:hover,
+.page-hero .button:hover,
+.final-cta .button:hover {
+  background: #e8ecff;
+  color: var(--navy);
+}
+.hero .button-outline {
+  background: transparent;
+  color: #fff;
+}
+.site-footer .footer-bottom {
+  border-top-color: #ffffff26;
+}
+.site-header .menu-toggle {
+  background: transparent;
+  color: #fff;
+  border-color: #ffffff66;
+}
+.site-header :focus-visible,
+.hero :focus-visible,
+.site-footer :focus-visible {
+  outline-color: #fff;
+}
+.hero,
+.page-hero {
+  padding-block: 68px;
+}
+.section-eyebrow {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 1.8px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.person {
+  border: 1px solid var(--line);
+  background: #fff;
+  overflow: hidden;
+}
+.person > img {
+  max-width: none;
+  width: 100%;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--paper);
+}
+.person-copy {
+  max-width: none;
+  padding: 24px;
+}
+.person h3 {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+.person-role {
+  color: var(--accent);
+  font-size: 11px;
+  line-height: 1.7;
+  margin-bottom: 9px;
+}
+.person p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+.physician-preview {
+  gap: 28px;
+}
+.physician-preview .person {
+  display: flex;
+  flex-direction: column;
+}
+.physician-preview .person-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.physician-preview .text-link {
+  margin-top: auto;
+  font-size: 12px;
+}
+.full-profiles {
+  gap: 28px;
+  align-items: start;
+}
+.full-profiles .person-copy {
+  padding: 26px;
+}
+.full-profiles .person {
+  scroll-margin-top: 115px;
+}
+.physician-training {
+  border-top: 1px solid var(--line);
+  margin: 24px 0 0;
+  padding-top: 8px;
+}
+.physician-training > div {
+  padding-top: 15px;
+}
+.physician-training dt {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1.6;
+}
+.physician-training dd {
+  margin: 4px 0 0;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.founding-section {
+  background: var(--paper);
+}
+.founding-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.founding-grid .person {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+.founding-grid .person > img {
+  aspect-ratio: 1;
+}
+.physician-invitation {
+  background: var(--paper);
+}
+@media (max-width: 1050px) {
+  .founding-grid .person {
+    display: block;
+  }
+  .founding-grid .person > img {
+    aspect-ratio: 480/380;
+    object-position: center 25%;
+  }
+}
+@media (max-width: 850px) {
+  .site-header nav {
+    background: var(--navy);
+  }
+  .hero,
+  .page-hero {
+    padding-block: 46px;
+  }
+  .full-profiles.leadership-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-profiles.leadership-grid .person {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+  .full-profiles.leadership-grid .person > img {
+    aspect-ratio: 1;
+  }
+}
+@media (max-width: 600px) {
+  .founding-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-profiles.leadership-grid .person {
+    display: block;
+  }
+  .full-profiles.leadership-grid .person > img,
+  .founding-grid .person > img {
+    aspect-ratio: 480/442;
+  }
+  .full-profiles .person-copy,
+  .person-copy {
+    padding: 23px;
+  }
+  .physician-preview .person > img {
+    max-width: none;
   }
 }
