@@ -60,7 +60,7 @@ Optional later work: licensed self-hosted fonts, a client-approved analytics pro
 
 ## Separate admin repository
 
-The portal and Convex backend source now live in https://github.com/reimage-demo/amanah-admin under Reimage. This public repository retains only an old-link redirect at `/admin/`. Each repository has independent GitHub Pages settings and its own custom-domain input. Database, collected records, and admin credentials are unchanged.
+The portal and Convex backend source live alongside the public pages in the same local Amanah project, in `admin/` and `convex/`. The portal publishes to https://github.com/reimage-demo/amanah-admin under Reimage. The public build retains an old-link redirect at `/admin/`. Each repository has independent GitHub Pages settings and its own custom-domain input. Database, collected records, and admin credentials are unchanged.
 
 ## Client palette and complete physician profiles — September 28, 2026
 

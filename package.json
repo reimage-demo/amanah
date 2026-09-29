@@ -1,5 +1,5 @@
 {
-  "name": "amanah-public",
+  "name": "amanah",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -8,13 +8,24 @@
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "vitest run",
-    "publish:pages": "node scripts/publish-pages.mjs"
+    "publish:pages": "node scripts/publish-pages.mjs",
+    "admin:dev": "npm --prefix admin run dev",
+    "admin:build": "npm --prefix admin run build",
+    "admin:publish": "npm --prefix admin run publish:pages",
+    "convex:dev": "convex dev",
+    "convex:deploy": "convex deploy",
+    "typecheck": "tsc -p convex/tsconfig.json"
   },
-  "dependencies": {},
+  "dependencies": {
+    "convex": "^1.46.0",
+    "@convex-dev/auth": "^0.0.95"
+  },
   "devDependencies": {
     "@types/node": "^26.6.3",
     "jsdom": "^29.1.1",
     "vite": "^8.3.1",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.11",
+    "typescript": "^7.0.2",
+    "convex-test": "^0.0.60"
   }
 }

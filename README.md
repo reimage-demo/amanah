@@ -1,35 +1,48 @@
-# Amanah public website
+# Amanah
 
-Public recruitment website and three-step join experience. This repository contains only the public frontend. The admin portal and Convex backend source are maintained independently in **[reimage-demo/amanah-admin](https://github.com/reimage-demo/amanah-admin)**.
+One local project contains the public website, admin portal, and Convex backend, following the Empire Elite Rides layout:
+
+```text
+amanah/
+  index.html, physicians.html, partners.html, ...
+  assets/
+  admin/       # React + Vite portal
+  convex/      # Shared backend and generated API
+  tests/       # Public form and backend tests
+```
+
+## Local development
+
+```sh
+npm ci
+npm --prefix admin ci
+npm run dev          # Public website
+npm run admin:dev    # Admin portal on port 5174 (separate terminal)
+npm run convex:dev  # Backend development, when needed
+```
+
+The root `.env.local` configures Convex. `admin/.env.local` configures the portal's local endpoint; `admin/.env.production` contains public production endpoints only. Production secrets stay in Convex environment variables.
+
+## Verify
+
+```sh
+npm test
+node tests/verify.cjs
+npm run typecheck
+npm run build
+npm run admin:build
+```
+
+## Publish to two repositories
+
+```sh
+npm run publish:pages  # Public dist/ → reimage-demo/amanah:gh-pages
+npm run admin:publish  # admin/dist/ → reimage-demo/amanah-admin:gh-pages
+```
+
+These are separate publishing destinations built from this single local project. Each repository keeps independent GitHub Pages and custom-domain settings. Publishing preserves existing CNAME files. The public build includes an `/admin/` redirect to the deployed portal; the local `admin/` directory contains the actual application.
 
 - Public site: https://reimage-demo.github.io/amanah/
 - Admin portal: https://reimage-demo.github.io/amanah-admin/
 
-## Develop and publish
-
-```sh
-npm ci
-npm run dev
-npm test
-node tests/verify.cjs
-npm run build
-npm run publish:pages
-```
-
-Vite builds the public HTML pages and assets into `dist/`. The publishing script deploys them to this repository’s `gh-pages` branch and preserves any custom domain already configured in GitHub Pages. GitHub Pages serves `gh-pages`, root directory.
-
-This repository has its own Pages custom-domain field for the public domain. The separate `amanah-admin` repository has its own field for `admin.amanah.com`. Custom-domain and DNS configuration have not been changed.
-
-The old `/admin/` URL is only a redirect to the new standalone portal; it contains no admin application or backend code.
-
-## Forms and database
-
-Convex remains the only database. `assets/js/config.js` contains the public production HTTP endpoint, `https://fast-roadrunner-39.convex.site`. Both physician and hospital forms post to `/join`. The endpoint and saved records are unchanged by the repository split.
-
-The form presents three steps, a review, and a personalized welcome only after successful persistence. Failures preserve answers, and retries reuse an idempotency key. No email is automatically sent. Authorized administrators follow up in the separate portal.
-
-All backend deployment and authentication management now happen from `amanah-admin`. This public repository needs no authentication secrets, database deploy credentials, or React dependencies.
-
-## Verification
-
-`npm test` checks form progression, complete review, confirmed-success welcomes, and retry behavior. `node tests/verify.cjs` checks public links, anchors, labels, and assets. `python3 tests/mock-server.py` runs a local mock-only form preview at port 8001.
+Run `npm run convex:deploy` from this project root to deploy backend changes. Moving the source does not change the production database, collected records, authentication, or endpoints. Public forms still post to `https://fast-roadrunner-39.convex.site/join`.

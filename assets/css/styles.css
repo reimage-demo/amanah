@@ -1449,7 +1449,7 @@ form[data-inquiry] {
   }
 }
 
-/* Balance the logo with equal side columns so navigation is page-centered. */
+/* Center the main links independently of the logo and call action. */
 @media (min-width: 851px) {
   .header-inner {
     display: grid;
@@ -1464,6 +1464,12 @@ form[data-inquiry] {
     grid-column: 2;
     justify-self: center;
     justify-content: center;
+  }
+  .site-header nav .nav-call {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 @media (max-width: 850px) {
@@ -1570,7 +1576,7 @@ form[data-inquiry] {
 .storage-notice button { margin-left: 20px; background: #191b43; color: white; padding: 10px 14px; border: 0; cursor: pointer; }
 @media (max-width: 850px) { .members-list { grid-template-columns: 1fr; } }
 @media (min-width: 851px) and (max-width: 1100px) {
-  .header-inner { grid-template-columns: 90px minmax(0,1fr); gap: 18px; }
+  .header-inner { gap: 18px; }
   .site-header nav { gap: 16px; font-size: 12px; }
 }
 
@@ -1593,6 +1599,20 @@ form[data-inquiry] {
   font-weight: 600;
 }
 .site-header nav .nav-join:hover { background: #fff; color: #191b43; }
+.site-header nav .nav-call {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  background: #fff;
+  color: #191b43;
+  font-weight: 600;
+}
+.site-header nav .nav-call:hover {
+  background: #e8eaf2;
+  color: #191b43;
+}
+
 .hero, .page-hero { text-align: center; }
 .hero h1, .page-hero h1, .hero .lead, .page-hero .lead { margin-inline: auto; }
 .page-hero h1 { max-width: 880px; }

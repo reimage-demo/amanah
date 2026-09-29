@@ -9,6 +9,8 @@ export default defineConfig({
       closeBundle() {
         mkdirSync("dist/assets", { recursive: true });
         cpSync("assets", "dist/assets", { recursive: true });
+        mkdirSync("dist/admin", { recursive: true });
+        cpSync("scripts/admin-redirect.html", "dist/admin/index.html");
       },
     },
   ],
@@ -25,7 +27,6 @@ export default defineConfig({
         legal: resolve("legal.html"),
         cookies: resolve("cookies.html"),
         accessibility: resolve("accessibility.html"),
-        admin: resolve("admin/index.html"),
       },
     },
   },

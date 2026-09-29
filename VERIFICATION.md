@@ -15,7 +15,7 @@ The database and authentication use Convex exclusively. The frontend is hosted t
 
 ## Repository split — September 28, 2026
 
-Admin application, Convex source, and backend tests moved to `reimage-demo/amanah-admin`. The public repository retains public pages and public form tests. Old `/admin/` links redirect to the independent portal. The login now uses one centered logo and sign-in card.
+Admin application, Convex source, public pages, and tests share the local Amanah project (`admin/`, `convex/`, and `tests/`). Public and admin builds publish separately to `reimage-demo/amanah` and `reimage-demo/amanah-admin`. Old `/admin/` links redirect to the independent portal. The login now uses one centered logo and sign-in card.
 
 ## Blue/white palette and biographies — September 28, 2026
 
