@@ -42,7 +42,7 @@ npm run admin:publish  # admin/dist/ → reimage-demo/amanah-admin:gh-pages
 
 These are separate publishing destinations built from this single local project. Each repository keeps independent GitHub Pages and custom-domain settings. Publishing preserves existing CNAME files. The public build includes an `/admin/` redirect to the deployed portal; the local `admin/` directory contains the actual application.
 
-- Public site: https://reimage-demo.github.io/amanah/
-- Admin portal: https://reimage-demo.github.io/amanah-admin/
+- Public site: https://www.amanahmedicalcare.com/
+- Admin portal: https://admin.amanahmedicalcare.com/
 
 Run `npm run convex:deploy` from this project root to deploy backend changes. Moving the source does not change the production database, collected records, authentication, or endpoints. Public forms still post to `https://fast-roadrunner-39.convex.site/join`.

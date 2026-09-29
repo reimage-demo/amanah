@@ -7,6 +7,7 @@ export default defineConfig({
     {
       name: "copy-static-assets",
       closeBundle() {
+        cpSync("CNAME", "dist/CNAME");
         mkdirSync("dist/assets", { recursive: true });
         cpSync("assets", "dist/assets", { recursive: true });
         mkdirSync("dist/admin", { recursive: true });
