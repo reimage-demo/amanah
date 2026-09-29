@@ -1710,3 +1710,39 @@ form[data-inquiry] {
 @media (max-width: 700px) {
   .physician-join-photo img { height: 260px; }
 }
+
+/* From shared practice to a consultation, then the communities it could reach. */
+.econsult-section .section-heading,
+.target-regions .section-heading { max-width: 780px; margin-inline: auto; }
+.consult-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  list-style: none;
+  padding: 0;
+  margin: 44px 0 0;
+}
+.consult-steps li { display: flex; flex-direction: column; border-top: 1px solid #bcc4df; padding-top: 24px; }
+.consult-number { color: #646f9c; font: 400 38px Georgia, serif; margin-bottom: 22px; }
+.consult-steps h3 { font: 400 27px/1.2 Georgia, serif; max-width: 290px; }
+.consult-steps p { font-size: 15px; line-height: 1.8; }
+.consult-stage { display: block; margin-top: auto; padding-top: 14px; font-size: 12px; font-weight: 600; color: var(--accent); }
+.consult-closing { text-align: center; border-top: 1px solid var(--line); margin-top: 38px; padding-top: 30px; }
+.consult-closing p { font: 400 24px/1.4 Georgia, serif; color: var(--navy); margin-bottom: 14px; }
+.region-maps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; margin-block: 36px; }
+.region-maps figure { margin: 0; min-width: 0; text-align: center; }
+.region-maps img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: contain; }
+.region-maps figcaption { padding-top: 24px; }
+.region-maps h3 { font: 400 25px/1.25 Georgia, serif; margin-bottom: 10px; }
+.region-maps figcaption p { font-size: 14px; max-width: 360px; margin-inline: auto; }
+.regions-note { max-width: 660px; margin: 0 auto; text-align: center; font-size: 13px; }
+@media (max-width: 760px) {
+  .consult-steps { grid-template-columns: 1fr; gap: 28px; margin-top: 30px; }
+  .consult-steps li { position: relative; padding-left: 60px; }
+  .consult-number { position: absolute; left: 0; top: 24px; font-size: 30px; }
+  .consult-steps h3 { max-width: none; }
+  .consult-stage { padding-top: 0; }
+  .region-maps { grid-template-columns: 1fr; gap: 36px; }
+  .region-maps img { max-width: 540px; margin-inline: auto; }
+  .region-maps figcaption { padding-top: 12px; }
+}
