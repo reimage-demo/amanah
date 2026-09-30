@@ -258,3 +258,64 @@
     });
   });
 })();
+
+// Match Andaleeb's gentle, once-only entrance motion across public pages.
+(() => {
+  "use strict";
+  const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (motion.matches || !("IntersectionObserver" in window)) return;
+
+  const groups = [
+    ".hero-copy", ".page-hero > .container", ".platform-intro",
+    ".ayah-section > .container", ".care-story", ".editorial-split",
+    ".consult-steps", ".region-maps", ".leadership-grid", ".founding-grid",
+    ".aspiration-grid", ".contribution-rows", ".platform-principles",
+    ".platform-purpose", ".final-cta > .container",
+  ];
+  const candidates = new Set(document.querySelectorAll(
+    "main .section-heading, main .section-link, main .consult-closing, " +
+    "main .regions-note, main .aspiration-note, main .tour-heading, " +
+    "main .tour-controls, main .tour-stage, main .platform-note, main .faq > details, " +
+    "main .section > .container > h2, main .section > .container > p, " +
+    "main .split > div, main .hero-grid > figure"
+  ));
+  groups.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((group) => {
+      [...group.children].forEach((element, index) => {
+        if (element.matches("form, dialog, script") || element.querySelector("form")) return;
+        candidates.add(element);
+        element.style.setProperty("--reveal-delay", `${(index % 3) * 0.09}s`);
+      });
+    });
+  });
+  // Avoid animating both a parent and its contents (which doubles the movement).
+  const targets = [...candidates].filter((element) => {
+    for (let parent = element.parentElement; parent; parent = parent.parentElement) {
+      if (candidates.has(parent)) return false;
+    }
+    return true;
+  });
+  const reveal = (element) => {
+    element.classList.add("is-revealed");
+    observer.unobserve(element);
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => { if (entry.isIntersecting) reveal(entry.target); });
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+  targets.forEach((element) => {
+    // Preserve content above a restored scroll position or a direct anchor link.
+    if (element.getBoundingClientRect().bottom < 0) return;
+    element.classList.add("scroll-reveal");
+    observer.observe(element);
+  });
+  document.addEventListener("focusin", (event) => {
+    const target = event.target.closest(".scroll-reveal");
+    if (target) reveal(target);
+  });
+  motion.addEventListener("change", (event) => {
+    if (!event.matches) return;
+    targets.forEach(reveal);
+    observer.disconnect();
+  });
+})();

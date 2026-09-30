@@ -1,0 +1,59 @@
+.platform-page { --platform-muted: #656980; --platform-line: #dce0e9; }
+.platform-explore { color: #fff; display: inline-flex; align-items: center; gap: 22px; margin-top: 20px; font-size: 13px; text-decoration: none; }
+.platform-explore span { border: 1px solid #ffffff66; border-radius: 50%; display: grid; place-items: center; width: 34px; height: 34px; transition: transform .2s; }
+.platform-explore:hover span { transform: translateY(4px); }
+.platform-tour { scroll-margin-top: 110px; padding-block: 40px 65px; }
+.tour-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--platform-line); padding-top: 30px; margin-bottom: 24px; }
+.tour-heading h2 { font: 400 28px/1.2 Georgia, serif; margin: 0; }
+.tour-label, .caption-tag { font-size: 10px; letter-spacing: .14em; color: var(--platform-muted); }
+.tour-controls { display: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 24px; }
+.tour-enhanced .tour-controls { display: grid; }
+.tour-controls button { font: inherit; background: #f6f7fa; color: var(--navy); border: 1px solid #e8eaf0; border-radius: 8px; display: flex; align-items: center; text-align: left; gap: 14px; padding: 20px 16px; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
+.tour-controls button:hover { transform: translateY(-3px); }
+.tour-controls button[aria-pressed="true"] { background: var(--navy); color: white; border-color: var(--navy); box-shadow: 0 6px 18px #191b4314; }
+.tour-controls strong { font-size: 14px; display: block; font-weight: 600; }
+.tour-controls small { display: block; font-size: 11px; margin-top: 4px; opacity: .7; }
+.tour-stage { border-radius: 16px; background: #eff1f7; padding: 36px 36px 0; border: 1px solid #e5e8f0; overflow: hidden; }
+.tour-panel[hidden] { display: none; }
+.tour-panel { margin-bottom: 30px; }
+.tour-enhanced .tour-panel { margin-bottom: 0; animation: screen-enter .45s ease both; }
+.screen-frame { overflow: hidden; border-radius: 9px; background: #fff; border: 1px solid #d8ddea; box-shadow: 0 15px 40px #252d5012; }
+.screen-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 16px; background: #fafbfe; border-bottom: 1px solid #e4e7ef; font-size: 9px; letter-spacing: .1em; color: #73798e; }
+.screen-dots { letter-spacing: 3px; color: #c1c6d6; }
+.screen-expand { display: none; font: inherit; letter-spacing: 0; font-size: 11px; background: white; color: var(--navy); border: 1px solid #dce0e9; padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+.tour-enhanced .screen-expand { display: inline-block; }
+.screen-frame > img { width: 100%; height: auto; aspect-ratio: 1960 / 1211; object-fit: contain; object-position: top; background: #fff; display: block; }
+.screen-caption { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 28px 0; align-items: start; }
+.screen-caption h3 { font: 400 25px/1.25 Georgia, serif; margin: 0 0 8px; }
+.screen-caption p { max-width: 580px; font-size: 14px; line-height: 1.7; margin: 0; color: var(--platform-muted); }
+.caption-tag { padding-top: 9px; }
+.platform-note { text-align: center; font-size: 12px; margin: 20px auto 0; color: var(--platform-muted); max-width: 690px; }
+.platform-purpose { padding-block: 60px 85px; border-top: 1px solid var(--platform-line); text-align: center; }
+.platform-purpose h2 { font: 400 clamp(34px, 4vw, 48px)/1.16 Georgia, serif; margin: 14px 0 46px; letter-spacing: -.025em; }
+.platform-principles { display: grid; grid-template-columns: repeat(3, 1fr); text-align: left; gap: 40px; }
+.platform-principles > div { border-top: 1px solid var(--platform-line); padding-top: 20px; }
+.platform-principles h3 { font: 400 23px/1.3 Georgia, serif; margin: 0 0 12px; }
+.platform-principles p { font-size: 14px; color: var(--platform-muted); line-height: 1.8; }
+.platform-lightbox { width: min(96vw, 2100px); max-width: 96vw; max-height: 94dvh; padding: 0; border: 1px solid #dce0e9; border-radius: 12px; background: white; color: var(--navy); }
+.platform-lightbox::backdrop { background: #10122bdb; backdrop-filter: blur(5px); }
+.lightbox-toolbar { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 16px 20px; border-bottom: 1px solid #dce0e9; }
+.lightbox-toolbar h2 { margin: 0; font: 400 22px/1.3 Georgia, serif; }
+.lightbox-toolbar > div { display: flex; gap: 8px; }
+.lightbox-toolbar button { font: inherit; font-size: 13px; padding: 8px 14px; border: 1px solid #dce0e9; border-radius: 4px; background: #f6f7fa; color: var(--navy); cursor: pointer; }
+.lightbox-scroll { overflow: auto; max-height: calc(94dvh - 85px); }
+.lightbox-scroll img { display: block; width: 100%; height: auto; }
+.lightbox-scroll.is-zoomed img { width: auto; max-width: none; }
+body:has(.platform-lightbox[open]) { overflow: hidden; }
+.platform-page button:focus-visible, .platform-page a:focus-visible { outline: 3px solid #627bb9; outline-offset: 4px; }
+@keyframes screen-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1000px) { .caption-tag { display: none; } .screen-caption { grid-template-columns: 1fr; } .tour-controls button { padding: 16px 12px; gap: 9px; } }
+@media (max-width: 650px) {
+  .tour-heading { align-items: start; } .tour-heading h2 { font-size: 23px; } .tour-label { display: none; }
+  .tour-controls { grid-template-columns: 1fr; gap: 8px; } .tour-controls button { padding: 14px 16px; } .tour-stage { padding: 12px 12px 0; border-radius: 10px; }
+  .screen-toolbar { padding: 8px; font-size: 8px; letter-spacing: .025em; } .screen-dots { display: none; }
+  .screen-caption { display: block; padding: 20px 6px; } .screen-caption h3 { font-size: 24px; } .screen-caption p { font-size: 13px; }
+  .platform-principles { grid-template-columns: 1fr; gap: 20px; }
+  .platform-purpose { padding-block: 40px; } .platform-purpose h2 { margin-bottom: 30px; }
+  .lightbox-toolbar { padding: 12px; align-items: start; } .lightbox-toolbar h2 { font-size: 18px; } .lightbox-toolbar button { white-space: nowrap; padding: 7px 9px; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) { .platform-page *, .platform-page *::before, .platform-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

@@ -1723,7 +1723,6 @@ form[data-inquiry] {
   margin: 44px 0 0;
 }
 .consult-steps li { display: flex; flex-direction: column; border-top: 1px solid #bcc4df; padding-top: 24px; }
-.consult-number { color: #646f9c; font: 400 38px Georgia, serif; margin-bottom: 22px; }
 .consult-steps h3 { font: 400 27px/1.2 Georgia, serif; max-width: 290px; }
 .consult-steps p { font-size: 15px; line-height: 1.8; }
 .consult-stage { display: block; margin-top: auto; padding-top: 14px; font-size: 12px; font-weight: 600; color: var(--accent); }
@@ -1738,11 +1737,33 @@ form[data-inquiry] {
 .regions-note { max-width: 660px; margin: 0 auto; text-align: center; font-size: 13px; }
 @media (max-width: 760px) {
   .consult-steps { grid-template-columns: 1fr; gap: 28px; margin-top: 30px; }
-  .consult-steps li { position: relative; padding-left: 60px; }
-  .consult-number { position: absolute; left: 0; top: 24px; font-size: 30px; }
   .consult-steps h3 { max-width: none; }
   .consult-stage { padding-top: 0; }
   .region-maps { grid-template-columns: 1fr; gap: 36px; }
   .region-maps img { max-width: 540px; margin-inline: auto; }
   .region-maps figcaption { padding-top: 12px; }
+}
+
+/* Keep the expanded public navigation clear of the logo and call action. */
+@media (min-width: 851px) and (max-width: 1150px) {
+  .header-inner { display: flex; justify-content: space-between; gap: 14px; }
+  .header-inner > nav { gap: 12px; }
+  .site-header nav .nav-call { position: static; transform: none; padding-inline: 12px; }
+  .site-header nav > a { font-size: 12px; }
+}
+.platform-home-link { display: inline-block; margin-top: 14px; }
+
+/* Andaleeb's 18px fade-up and 90ms stagger, enabled only by JavaScript. */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .62s cubic-bezier(.2,.7,.2,1), transform .62s cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--reveal-delay, 0s);
+  }
+  .scroll-reveal.is-revealed { opacity: 1; transform: translateY(0); }
+  .scroll-reveal:focus-within { opacity: 1; transform: none; transition-delay: 0s; }
+}
+@media print {
+  .scroll-reveal { opacity: 1 !important; transform: none !important; }
 }
