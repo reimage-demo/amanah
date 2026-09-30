@@ -57,3 +57,7 @@ body:has(.platform-lightbox[open]) { overflow: hidden; }
   .lightbox-toolbar { padding: 12px; align-items: start; } .lightbox-toolbar h2 { font-size: 18px; } .lightbox-toolbar button { white-space: nowrap; padding: 7px 9px; font-size: 11px; }
 }
 @media (prefers-reduced-motion: reduce) { .platform-page *, .platform-page *::before, .platform-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+.platform-document { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 16px 24px; margin: 30px 0 24px; }
+.platform-document .button { border-radius: 999px; }
+.platform-document .text-link { font-size: 14px; }
