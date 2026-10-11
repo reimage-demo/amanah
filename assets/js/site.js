@@ -142,7 +142,7 @@
           const dt = document.createElement("dt");
           dt.textContent = input.labels[0].textContent.replace("*", "").trim();
           const dd = document.createElement("dd");
-          dd.textContent = input.name === "public_directory" ? (input.value === "yes" ? "Yes, publish my name" : "Keep my name private") : input.value || "Not provided";
+          dd.textContent = input.name === "email_updates" ? (input.checked ? "Yes, email me updates" : "No update emails") : input.name === "public_directory" ? (input.value === "yes" ? "Yes, publish my name" : "Keep my name private") : input.value || "Not provided";
           row.append(dt, dd);
           dl.append(row);
         }
