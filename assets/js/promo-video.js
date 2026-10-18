@@ -113,7 +113,7 @@
     else syncPlayback();
   });
 
-  video.muted = true;
+  video.muted = false;
   video.hidden = false;
   container.querySelector(".promo-video-actions").hidden = false;
   updateControls();
