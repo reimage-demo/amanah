@@ -5,7 +5,7 @@
   notice.setAttribute('aria-label', 'Browser storage notice');
   notice.hidden = true;
   const text = document.createElement('p');
-  text.textContent = 'No advertising or analytics trackers. We use browser storage to remember dismissal of this notice.';
+  text.textContent = 'No advertising or analytics trackers. We use browser storage to remember dismissal of this notice and your video pause preference.';
   const link = document.createElement('a');
   link.href = 'cookies.html';
   link.textContent = 'Cookies & storage';

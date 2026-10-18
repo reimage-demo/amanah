@@ -29,7 +29,8 @@
     <script src="assets/js/config.js" defer=""></script>
     <script src="assets/js/site.js" defer=""></script>
     <script src="assets/js/privacy.js" defer></script>
-    <link rel="stylesheet" crossorigin href="./assets/styles-BIaKMVNC.css">
+    <script src="assets/js/promo-video.js" defer></script>
+    <link rel="stylesheet" crossorigin href="./assets/styles-Cg6L0tfA.css">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -96,7 +97,22 @@
           <p class="lead">A child. A parent. A family waiting for answers. And a local medical team doing everything they can to help.</p>
           <p>Amanah begins with a belief: the knowledge we carry as physicians is a trust to share. By working alongside local clinicians, we hope to help more families find the care they need, closer to home.</p>
         </div>
-        <figure class="care-photo story-photo"><img src="./assets/patient-care-8o8GcaaA.jpg" alt="A doctor listening to a young patient’s heartbeat" width="1400" height="935" loading="lazy" /></figure>
+        <figure class="care-photo story-photo promo-video" data-promo-video>
+          <video id="amanah-promo" width="1280" height="720" controls muted playsinline preload="none"
+            poster="./assets/amanah-promo-poster-BkHTzaM4.jpg" aria-label="Amanah promotional video"
+            data-src="assets/videos/amanah-promo-720p.mp4"
+            data-mobile-src="assets/videos/amanah-promo-480p.mp4" hidden></video>
+          <div class="promo-video-actions" hidden>
+            <button type="button" data-video-play aria-controls="amanah-promo">Play video</button>
+            <button type="button" data-video-sound aria-controls="amanah-promo">Turn sound on</button>
+          </div>
+          <p class="promo-video-status" role="status" data-video-status></p>
+          <noscript>
+            <video width="1280" height="720" controls playsinline preload="none"
+              poster="./assets/amanah-promo-poster-BkHTzaM4.jpg" aria-label="Amanah promotional video"
+              src="./assets/amanah-promo-720p-C7Z2W3bC.mp4"></video>
+          </noscript>
+        </figure>
       </section>
       <section class="section ayah-section" aria-labelledby="ayah-heading">
         <div class="container">
