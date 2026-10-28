@@ -6,12 +6,16 @@
   const nameKey = name => name.trim().replace(/^dr\.?\s+/i, '').replace(/\s+/g, ' ').toLowerCase();
   const seen = new Set(Array.from(list.children, item => nameKey(item.textContent)));
   let cursor = null, busy = false, count = list.children.length;
+  function setStatus(message) {
+    status.textContent = message;
+    status.hidden = !message;
+  }
   async function load() {
     if (busy) return;
     busy = true;
     more.disabled = true;
     retry.hidden = true;
-    status.textContent = count ? `${count} community names shown. Loading more…` : 'Loading our community…';
+    setStatus(count ? '' : 'Loading our community…');
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 15000);
     try {
@@ -32,9 +36,9 @@
       }
       cursor = data.cursor;
       more.hidden = !cursor;
-      status.textContent = count ? `${count} community ${count === 1 ? 'name' : 'names'} shown.` : 'Our community is taking shape. Names will appear here as physicians choose to share them.';
+      setStatus(count ? '' : 'Be part of our growing community.');
     } catch {
-      status.textContent = count ? `${count} community names shown. We could not load additional names. Please try again.` : 'We could not load the member directory. Please try again.';
+      setStatus(count ? 'We could not load additional names. Please try again.' : 'We could not load the member directory. Please try again.');
       retry.hidden = false;
     } finally {
       clearTimeout(timeout);
