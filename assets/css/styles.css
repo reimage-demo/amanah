@@ -1595,12 +1595,14 @@ form[data-inquiry] {
 }
 .site-header nav .nav-join {
   display: inline-flex;
-  height: 34px;
-  padding: 0 12px;
-  border: 1px solid #ffffffb3;
+  height: 44px;
+  padding: 0 20px;
+  border: 2px solid #fff;
   border-radius: 999px;
-  background: #ffffff0d;
+  background: transparent;
+  font-size: 14px;
   font-weight: 600;
+  line-height: 1.25;
 }
 .site-header nav .nav-join:hover { background: #fff; color: #191b43; }
 .site-header nav .nav-call {
