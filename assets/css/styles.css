@@ -121,6 +121,9 @@ button,
 a {
   touch-action: manipulation;
 }
+button {
+  border-radius: 999px;
+}
 .container {
   width: min(1120px, calc(100% - 64px));
   margin-inline: auto;
@@ -193,7 +196,7 @@ nav > a[aria-current="page"] {
   min-height: 46px;
   padding: 13px 21px;
   border: 1px solid var(--navy);
-  border-radius: 2px;
+  border-radius: 999px;
   background: var(--navy);
   color: white;
   font-size: 13px;
@@ -689,7 +692,7 @@ button:disabled {
   padding: 8px 12px;
   min-height: 44px;
   border: 1px solid var(--line);
-  border-radius: 2px;
+  border-radius: 999px;
   background: #fff;
   color: var(--navy);
   cursor: pointer;
@@ -1594,7 +1597,7 @@ form[data-inquiry] {
   height: 34px;
   padding: 0 12px;
   border: 1px solid #ffffffb3;
-  border-radius: 3px;
+  border-radius: 999px;
   background: #ffffff0d;
   font-weight: 600;
 }
@@ -1603,7 +1606,7 @@ form[data-inquiry] {
   min-height: 44px;
   padding: 0 16px;
   border: 1px solid #fff;
-  border-radius: 3px;
+  border-radius: 999px;
   background: #fff;
   color: #191b43;
   font-weight: 600;

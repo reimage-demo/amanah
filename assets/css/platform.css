@@ -8,7 +8,7 @@
 .tour-label, .caption-tag { font-size: 10px; letter-spacing: .14em; color: var(--platform-muted); }
 .tour-controls { display: none; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 24px; }
 .tour-enhanced .tour-controls { display: grid; }
-.tour-controls button { font: inherit; background: #f6f7fa; color: var(--navy); border: 1px solid #e8eaf0; border-radius: 8px; display: flex; align-items: center; text-align: left; gap: 14px; padding: 20px 16px; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
+.tour-controls button { font: inherit; background: #f6f7fa; color: var(--navy); border: 1px solid #e8eaf0; border-radius: 999px; display: flex; align-items: center; text-align: left; gap: 14px; padding: 20px 16px; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
 .tour-controls button:hover { transform: translateY(-3px); }
 .tour-controls button[aria-pressed="true"] { background: var(--navy); color: white; border-color: var(--navy); box-shadow: 0 6px 18px #191b4314; }
 .tour-controls strong { font-size: 14px; display: block; font-weight: 600; }
@@ -20,7 +20,7 @@
 .screen-frame { overflow: hidden; border-radius: 9px; background: #fff; border: 1px solid #d8ddea; box-shadow: 0 15px 40px #252d5012; }
 .screen-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 16px; background: #fafbfe; border-bottom: 1px solid #e4e7ef; font-size: 9px; letter-spacing: .1em; color: #73798e; }
 .screen-dots { letter-spacing: 3px; color: #c1c6d6; }
-.screen-expand { display: none; font: inherit; letter-spacing: 0; font-size: 11px; background: white; color: var(--navy); border: 1px solid #dce0e9; padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+.screen-expand { display: none; font: inherit; letter-spacing: 0; font-size: 11px; background: white; color: var(--navy); border: 1px solid #dce0e9; padding: 6px 10px; border-radius: 999px; cursor: pointer; }
 .tour-enhanced .screen-expand { display: inline-block; }
 .screen-frame > img { width: 100%; height: auto; aspect-ratio: 1960 / 1211; object-fit: contain; object-position: top; background: #fff; display: block; }
 .screen-caption { display: grid; grid-template-columns: 1fr auto; gap: 20px; padding: 28px 0; align-items: start; }
@@ -39,7 +39,7 @@
 .lightbox-toolbar { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 16px 20px; border-bottom: 1px solid #dce0e9; }
 .lightbox-toolbar h2 { margin: 0; font: 400 22px/1.3 Georgia, serif; }
 .lightbox-toolbar > div { display: flex; gap: 8px; }
-.lightbox-toolbar button { font: inherit; font-size: 13px; padding: 8px 14px; border: 1px solid #dce0e9; border-radius: 4px; background: #f6f7fa; color: var(--navy); cursor: pointer; }
+.lightbox-toolbar button { font: inherit; font-size: 13px; padding: 8px 14px; border: 1px solid #dce0e9; border-radius: 999px; background: #f6f7fa; color: var(--navy); cursor: pointer; }
 .lightbox-scroll { overflow: auto; max-height: calc(94dvh - 85px); }
 .lightbox-scroll img { display: block; width: 100%; height: auto; }
 .lightbox-scroll.is-zoomed img { width: auto; max-width: none; }
