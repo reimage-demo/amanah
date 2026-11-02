@@ -50,6 +50,33 @@
     controls.forEach((input) => {
       if (!input.maxLength || input.maxLength < 0) input.maxLength = 250;
     });
+    const contributionGroup = form.querySelector("[data-contributions]");
+    const contributionBoxes = [...form.querySelectorAll('input[name="contribution"]')];
+    const allContributions = form.querySelector("[data-select-all]");
+    const unsureContribution = form.querySelector("[data-exclusive]");
+    const selectedContributions = () => contributionBoxes.filter((box) => box.checked).map((box) => box.value).join("; ");
+    const syncContributions = () => {
+      if (!contributionGroup) return;
+      const specific = contributionBoxes.filter((box) => box !== unsureContribution);
+      const selected = specific.filter((box) => box.checked).length;
+      allContributions.checked = selected === specific.length;
+      allContributions.indeterminate = selected > 0 && selected < specific.length;
+      contributionBoxes[0].setCustomValidity(
+        contributionBoxes.some((box) => box.checked) ? "" : "Please select at least one contribution or Not sure yet.",
+      );
+    };
+    contributionGroup?.addEventListener("change", (event) => {
+      const box = event.target;
+      if (box === allContributions) {
+        contributionBoxes.forEach((input) => { input.checked = input !== unsureContribution && box.checked; });
+      } else if (box === unsureContribution && box.checked) {
+        contributionBoxes.forEach((input) => { input.checked = input === unsureContribution; });
+      } else if (box.checked) {
+        unsureContribution.checked = false;
+      }
+      syncContributions();
+    });
+    syncContributions();
     let pending = false,
       sent = false,
       step = 0;
@@ -93,6 +120,7 @@
         : ["contact_name", "email", "organization", "role"];
     const inStep = (input) => (firstFields.includes(input.name) ? 0 : 1);
     const validate = () => {
+      syncContributions();
       for (const input of controls.filter((input) => inStep(input) === step)) {
         if (!input.reportValidity()) return false;
       }
@@ -138,11 +166,12 @@
         review.replaceChildren();
         const dl = document.createElement("dl");
         for (const input of controls) {
+          if (input === allContributions || (input.name === "contribution" && input !== contributionBoxes[0])) continue;
           const row = document.createElement("div");
           const dt = document.createElement("dt");
-          dt.textContent = input.labels[0].textContent.replace("*", "").trim();
+          dt.textContent = input.name === "contribution" ? "Preferred contributions" : input.labels[0].textContent.replace("*", "").trim();
           const dd = document.createElement("dd");
-          dd.textContent = input.name === "email_updates" ? (input.checked ? "Yes, email me updates" : "No update emails") : input.name === "public_directory" ? (input.value === "yes" ? "Yes, publish my name" : "Keep my name private") : input.value || "Not provided";
+          dd.textContent = input.name === "contribution" ? selectedContributions() : input.name === "email_updates" ? (input.checked ? "Yes, email me updates" : "No update emails") : input.name === "public_directory" ? (input.value === "yes" ? "Yes, publish my name" : "Keep my name private") : input.value || "Not provided";
           row.append(dt, dd);
           dl.append(row);
         }
@@ -175,6 +204,7 @@
         }
         return;
       }
+      syncContributions();
       for (const input of controls) {
         if (!input.checkValidity()) {
           step = inStep(input);
@@ -184,6 +214,10 @@
         }
       }
       const answers = Object.fromEntries(new FormData(form));
+      if (contributionGroup) {
+        answers.contribution = selectedContributions();
+        delete answers.contribution_all;
+      }
       if (answers._gotcha) return;
       pending = true;
       fieldset.disabled = true;

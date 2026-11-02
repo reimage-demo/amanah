@@ -1808,3 +1808,9 @@ form[data-inquiry] {
 .updates-choice label { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .updates-choice input[type="checkbox"] { width: 19px; height: 19px; min-height: 0; margin: 0; accent-color: #283362; }
 .updates-choice p { margin: 10px 0 0; font-size: 13px; line-height: 1.6; }
+
+/* Multiple contribution choices on physician signup. */
+.contribution-choices legend { font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.contribution-choices .field-help { margin-bottom: 8px; }
+.contribution-choices label { display: flex; align-items: center; gap: 10px; min-height: 44px; margin: 0; cursor: pointer; }
+.contribution-choices input[type="checkbox"] { flex: 0 0 19px; width: 19px; height: 19px; min-height: 0; margin: 0; padding: 0; accent-color: #283362; }

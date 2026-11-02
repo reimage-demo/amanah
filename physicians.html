@@ -27,9 +27,9 @@
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/png" sizes="128x128" href="./assets/amanah-tab-icon-20261028-DKiWO_ua.png" />
     <script src="assets/js/config.js" defer=""></script>
-    <script src="assets/js/site.js" defer=""></script>
+    <script src="assets/js/site.js?v=20261102-multiple-interests" defer=""></script>
     <script src="assets/js/privacy.js" defer></script>
-    <link rel="stylesheet" crossorigin href="./assets/styles-5HuZsno8.css">
+    <link rel="stylesheet" crossorigin href="./assets/styles-O3KcqZsG.css">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -163,16 +163,15 @@
                   Enter your state or province where applicable; otherwise enter
                   “Not applicable”.
                 </p>
-                <div class="field">
-                  <label for="contribution">Preferred contribution *</label
-                  ><select id="contribution" name="contribution" required="">
-                    <option value="">Select an option</option>
-                    <option>Consultation</option>
-                    <option>Teaching and mentorship</option>
-                    <option>Program development</option>
-                    <option>Not sure yet</option>
-                  </select>
-                </div>
+                <fieldset class="field contribution-choices full" data-contributions aria-describedby="contribution-help">
+                  <legend>Preferred contributions *</legend>
+                  <p class="field-help" id="contribution-help">Select all that interest you.</p>
+                  <label for="contribution-consultation"><input id="contribution-consultation" name="contribution" type="checkbox" value="Consultation" aria-describedby="contribution-help" /> Consultation</label>
+                  <label for="contribution-teaching"><input id="contribution-teaching" name="contribution" type="checkbox" value="Teaching and mentorship" /> Teaching and mentorship</label>
+                  <label for="contribution-program"><input id="contribution-program" name="contribution" type="checkbox" value="Program development" /> Program development</label>
+                  <label for="contribution-all"><input id="contribution-all" name="contribution_all" type="checkbox" data-select-all /> All of the above</label>
+                  <label for="contribution-unsure"><input id="contribution-unsure" name="contribution" type="checkbox" value="Not sure yet" data-exclusive /> Not sure yet</label>
+                </fieldset>
                 <div class="field">
                   <label for="availability"
                     >Approximate availability <span>(optional)</span></label
